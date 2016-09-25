@@ -1,0 +1,73 @@
+@import url(player.css);
+@import url(media.css);
+@import url(player_interact.css);
+@import 'https://fonts.googleapis.com/css?family=Kaushan+Script';
+@import 'https://fonts.googleapis.com/css?family=Monoton';
+@import 'https://fonts.googleapis.com/css?family=Russo+One';
+@import 'https://fonts.googleapis.com/css?family=Asap:400,700';
+@import 'https://fonts.googleapis.com/css?family=Pathway+Gothic+One';
+
+/*Website*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    background-color: #FFE74C;
+    background: -webkit-radial-gradient(circle, #ffe95c, #f1d839);
+    background: radial-gradient(circle, #ffe95c, #f1d839);
+}
+
+.logo_main {
+    position: absolute;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    opacity: 1;
+    font-size: 15vw;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    display: none;
+    /*    Hidden   */
+}
+
+.logo_hide {
+    opacity: 0;
+    font-size: 10vw;
+}
+
+.logo {
+    color: white;
+    /*font-family: 'Kaushan Script', cursive;*/
+    font-family: 'Monoton', cursive;
+    -webkit-animation: hov 0.5s ease-out;
+    animation: hov 0.5s ease-out;
+}
+
+@-webkit-keyframes hov {
+    50% {
+        font-size: 13vw;
+    }
+    80% {
+        font-size: 17vw;
+    }
+}
+
+@keyframes hov {
+    50% {
+        font-size: 13vw;
+    }
+    80% {
+        font-size: 17vw;
+    }
+}

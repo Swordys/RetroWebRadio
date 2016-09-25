@@ -1,0 +1,23 @@
+/*player interactions */
+
+.power_glow {
+    background: green;
+}
+
+.tune_mini_circle_2 {
+    transform: rotate(-25deg);
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+}
+
+.tune_mini_circle {
+    transform: rotate(-0deg);
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+}
+
+.tune_circle_main {
+    position: absolute;
+    right: 0;
+    border-radius: 50%;
+}
