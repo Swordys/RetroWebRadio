@@ -5,14 +5,21 @@ var fm_slider = $(".tune_circle");
 var angle = tune.css("transform", "rotate");
 var fm_pole = $(".fm_slider_bar");
 var fm_pole_loc = fm_pole.css("left");
-
+var player = $(".player");
 
 
 
 $(function() {
     logo.bind("click", function() {
-        $(this).addClass("logo_hide");
+        $(this).addClass("logo_hide"),
+            player.css("opacity", "1"),
+            player.css('transform', 'scale(' + 1 + ')'),
+            $(".player_foot").css("opacity", "1"),
+            $(".player_foot").css('transform', 'scale(' + 1 + ')'),
+            $(".player_foot2").css("opacity", "1"),
+            $(".player_foot2").css('transform', 'scale(' + 1 + ')');
     });
+
 });
 
 // interaction functions
