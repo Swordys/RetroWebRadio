@@ -22,6 +22,7 @@ $(function functionName() {
 
 
     // ON/OFF CONTROLS
+    var offswitch;
 
     Draggable.create(tune, {
         type: "rotation",
@@ -32,13 +33,16 @@ $(function functionName() {
         },
         liveSnap: function(endValue) {
             if (endValue == -25) {
+
                 $(".green_light").addClass("power_glow"),
                     $(".radio_list").trigger('pause');
             } else {
                 $(".green_light").removeClass("power_glow"),
                     $(".radio_list").trigger('play');
             }
+            offswitch = endValue;
             return Math.round(endValue / 25) * 25;
+
         }
     });
 
@@ -77,51 +81,50 @@ $(function functionName() {
             maxRotation: 100,
         },
         liveSnap: function(endValue) {
-            console.log(endValue)
-
-
-            if (endValue == 0) {
-                // filename = "mus/mus4.mp3";
-                // radio.attr("src",filename).trigger("play");
-            }
 
             // Plus songs
-            else if (endValue == 20) {
+
+            if ((endValue == 0) && !(offswitch == -25)) {
+                filename = "mus/opener.mp3";
+                radio.attr("src", filename).trigger("play");
+            } else if ((endValue == 20) && !(offswitch == -25)) {
                 filename = "mus/mus5.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == 40) {
+            } else if ((endValue == 40) && !(offswitch == -25)) {
                 filename = "mus/mus6.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == 60) {
+            } else if ((endValue == 60) && !(offswitch == -25)) {
                 filename = "mus/mus7.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == 80) {
+            } else if ((endValue == 80) && !(offswitch == -25)) {
                 filename = "mus/mus8.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == 100) {
+            } else if ((endValue == 100) && !(offswitch == -25)) {
                 filename = "mus/mus9.mp3";
                 radio.attr("src", filename).trigger("play");
             }
 
             // Minus songs
-            else if (endValue == -20) {
+            else if ((endValue == -20) && !(offswitch == -25)) {
                 filename = "mus/mus4.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == -40) {
+            } else if ((endValue == -40) && !(offswitch == -25)) {
                 filename = "mus/mus3.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == -60) {
+            } else if ((endValue == -60) && !(offswitch == -25)) {
                 filename = "mus/mus2.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == -80) {
+            } else if ((endValue == -80) && !(offswitch == -25)) {
                 filename = "mus/mus1.mp3";
                 radio.attr("src", filename).trigger("play");
-            } else if (endValue == -100) {
+            } else if ((endValue == -100) && !(offswitch == -25)) {
                 filename = "mus/mus0.mp3";
                 radio.attr("src", filename).trigger("play");
             } else if (!(endValue == 20) || !(endValue == 40) || !(endValue == 80) || !(endValue == 100) || !(endValue == -20) || !(endValue == -40) || !(endValue == -60) || !(endValue == -80) || !(endValue == -100)) {
-                filename = "mus/noise2.wav";
-                radio.attr("src", filename).trigger("play");
+                if (!(offswitch == -25)) {
+                    filename = "mus/noise2.wav";
+                    radio.attr("src", filename).trigger("play");
+                }
             }
 
 
