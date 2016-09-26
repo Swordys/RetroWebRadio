@@ -92,7 +92,7 @@ $(function functionName() {
             // Plus songs
 
             if ((endValue == 0) && !(offswitch == -25)) {
-                filename = "mus/opener.mp3";
+                filename = "mus/turnon.mp3";
                 radio.attr("src", filename).trigger("play");
             } else if ((endValue == 20) && !(offswitch == -25)) {
                 filename = "mus/mus5.mp3";
